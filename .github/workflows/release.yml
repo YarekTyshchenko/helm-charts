@@ -47,6 +47,8 @@ jobs:
 
       - name: Packages ${{ steps.chart.outputs.chart }} chart
         run: |
+          git config --global user.email "yarekt@gmail.com"
+          git config --global user.name "Yarek"
           mkdir -p dist/
           helm package charts/${{ steps.chart.outputs.chart }} -d dist/
 
